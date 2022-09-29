@@ -86,7 +86,7 @@ public class InventoryResource  {
 //     * <pre>
 //     * HTTP/1.1 422 Unprocessable Entity
 //     * Content-Length: 111
-//     * Content-Type: application/json
+//     * Content-Type: application.yaml/json
 //     *
 //     * {
 //     *     "code": 422,

@@ -5,10 +5,11 @@ import io.quarkus.hibernate.reactive.panache.PanacheEntity;
 import javax.persistence.Cacheable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Entity
 @Cacheable
-//@PersistenceUnit("inventory")
+@Table(name = "inventroy")
 public class Inventory extends PanacheEntity {
 
     @Column(length = 40, unique = true)

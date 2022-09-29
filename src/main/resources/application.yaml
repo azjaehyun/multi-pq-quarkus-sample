@@ -1,0 +1,176 @@
+greeting:
+  message: "hello"
+#java -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005 myPackage.myMainClassname
+quarkus:
+  #http:
+  #  port: 8222
+  hibernate-orm:
+    database:
+      generation: 'drop-and-create'
+    packages: 'org.acme.users'
+    sql-load-script: import-user.sql
+    log:
+      sql: true
+    users:
+      datasource: users
+      database:
+        generation: 'drop-and-create'
+      packages: 'org.acme.users'
+      sql-load-script: import-user.sql
+      log:
+        sql: true
+    inventory:
+      datasource: inventory
+      database:
+        generation: 'drop-and-create'
+      packages: 'org.acme.inventory'
+      sql-load-script: import-inven.sql
+      log:
+        sql: true
+  datasource:
+    db-kind: postgresql
+    username: postgres
+    password: postgres
+    driver: org.postgresql.Driver
+    reactive:
+      url: postgresql://localhost:5432/users # local
+    users:
+      db-kind: postgresql
+      username: postgres
+      password: postgres
+      driver: org.postgresql.Driver
+      jdbc:
+        url: postgresql://localhost:5432/users
+    inventory:
+      db-kind: postgresql
+      username: postgres
+      password: postgres
+      driver: org.postgresql.Driver
+      jdbc:
+        url: postgresql://localhost:5432/inventory
+
+#quarkus:
+#  log: # ALL > FINEST > FINER > FINE > CONFIG > INFO > WARNING > SEVERE > OFF
+#    console:
+#      async: true
+#      color: true
+#      enable: true
+#      format: "%d{yyyy-MM-dd HH:mm:ss,SSS} |- %-5p in %c:%L{3.} [%t] - %s%e%n"
+#    level: WARNING
+#  datasource:
+#    db-kind: postgresql
+#    username: postgres
+#    password: postgres
+#    reactive:
+#      url: postgresql://localhost:5432/users # local
+#      max-size: 20
+#    users:
+#      db-kind: postgresql
+#      username: postgres
+#      password: postgres
+#      reactive:
+#        url: postgresql://localhost:5432/users # local
+#        max-size: 20
+#    inventory:
+#      db-kind: postgresql
+#      username: postgres
+#      password: postgres
+#      reactive:
+#        url: postgresql://localhost:5432/inventory # local
+#        max-size: 20
+#  hibernate-orm:
+#    datasource: users
+#    packages: org.acme.users
+#    database:
+#      generation: 'drop-and-create'
+#    sql-load-script: import-user.sql
+#    log:
+#      sql: true
+#    users:
+#      datasource: users
+#      packages: org.acme.users
+#      database:
+#        generation: 'drop-and-create'
+#      sql-load-script: import-user.sql
+#      log:
+#        sql: true
+#    inventory:
+#      datasource: inventory
+#      packages: org.acme.inventory
+#      database:
+#        generation: 'drop-and-create'
+#      sql-load-script: import-inven.sql
+#      log:
+#        sql: true
+
+
+
+#quarkus:
+#  http:
+#    port: 8222
+#  hibernate-orm:
+#    users:
+#      datasource: users
+#      database:
+#        generation: 'drop-and-create'
+#      packages: 'org.acme.users'
+#      sql-load-script: import-user.sql
+#      log:
+#        sql: true
+#    inventory:
+#      datasource: inventory
+#      database:
+#        generation: 'drop-and-create'
+#      packages: 'org.acme.inventory'
+#      sql-load-script: import-inven.sql
+#      log:
+#        sql: true
+#  datasource:
+#    users:
+#      db-kind: postgresql
+#      reactive:
+#        url: postgresql://localhost:5432/users
+#      username: postgres
+#      password: postgres
+#      driver: org.postgresql.Driver
+#    inventory:
+#      db-kind: postgresql
+#      reactive:
+#        url: postgresql://localhost:5432/inventory
+#      username: postgres
+#      password: postgres
+#      driver: org.postgresql.Driver
+
+
+
+#qurkus:
+#  http:
+#    port: 9999
+#  datasource:
+#    users:
+#      db-kind: postgres
+#      devservices: false
+#      username: postgres
+#      password: postgres
+#      reactive:
+#        url: postgresql://localhost:5432/postgres # local
+#    inventory:
+#      db-kind: postgres
+#      devservices: false
+#      username: postgres
+#      password: postgres
+#      reactive:
+#        url: postgresql://localhost:5432/postgres # local
+#  hibernate-orm:
+#    users:
+#      datasource: users
+#      packages: org.acme.users
+#      sql-load-script: import-user.sql
+#      database:
+#        generation: drop-and-create
+#    inventory:
+#      datasource: inventory
+#      packages: org.acme.inventory
+#      sql-load-script: import-user.sql
+#      database:
+#        generation: drop-and-create
